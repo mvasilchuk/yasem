@@ -8,34 +8,37 @@ DESTDIR = ../bin
 DLLDESTDIR = ../bin/plugins
 
 SUBDIRS += \
-    yasem-core \
+    yasem-core
+
+PLUGINS = \
+    yasem-web-server \
+    yasem-vlc-mediaplayer \
     yasem-mag-api \
     yasem-ini-datasource \
     yasem-desktop-gui \
-    #yasem-qt-mediaplayer \
+    yasem-qt-mediaplayer \
     yasem-qtav-mediaplayer \
     yasem-dunehd-api \
-    yasem-samsung-smarttv-api \
-    yasem-web-server \
-    #TrayIcon
-    yasem-vlc-mediaplayer
+    yasem-samsung-smarttv-api
+
+for(name, PLUGINS) {
+    exists($${name}) {
+        message("Found submodule $${name}")
+        SUBDIRS += $${name}
+    }
+}
 
 !android-g++: {
     SUBDIRS += yasem-web-browser
     NDK_TOOLCHAIN_PREFIX = x86
 }
 
-
-#CONFIG += mobility
 MOBILITY = systeminfo
 symbian:TARGET.CAPABILITY = ReadDeviceData
 
 OTHER_FILES += \
-    android/AndroidManifest.xml
+    android/AndroidManifest.xml \
+    LICENSE \
+    README.md
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
-
-#AvMediaPlayer.depends += QtAV
-#QtAV.file = QtAV/QtAV.pro
-#QtAV.DESTDIR = ../bin
-#include(QtAV/root.pri)
