@@ -16,7 +16,7 @@ Yasem (Yet Another Stb EMulator) is a Set-Top-Box emulator for desktop platforms
 
 to run
 
-    cd bit
+    cd bin
     ./yasem
 
 
