@@ -11,22 +11,24 @@ Yasem (Yet Another Stb EMulator) is a Set-Top-Box emulator for desktop platforms
     git submodule update --init --recursive
     git submodule foreach --recursive git fetch
     git submodule foreach git merge origin master
+    qmake
+    make
+
+to run
+
+    cd bit
+    ./yasem
 
 
 #### Requirements
 
-* Qt 5 (5.2.1+ is recommended)
+* Qt 5 (5.2.1+ is recommended) with Webkit support
 * C++11 compatible compiler (tested with GCC and Clang)
-
-For using QtAV as a media player see [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
+* Patched version of [QtAV](https://github.com/wang-bin/QtAV) (included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
 
 - - -
 
-> Copyright &copy; Maxim Vasilchuk mvasilchuk@gmail.com
-
-> 2013-2014
-
-
+> Copyright &copy; 2013-2014 Maxim Vasilchuk mvasilchuk@gmail.com
 

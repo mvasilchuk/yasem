@@ -7,29 +7,27 @@ CONFIG += c++11
 DESTDIR = ../bin
 DLLDESTDIR = ../bin/plugins
 
-SUBDIRS += \
-    yasem-core
-
-PLUGINS = \
-    yasem-web-server \
+EXCLUDE = \
     yasem-vlc-mediaplayer \
-    yasem-mag-api \
-    yasem-ini-datasource \
-    yasem-desktop-gui \
-    yasem-qt-mediaplayer \
-    yasem-qtav-mediaplayer \
-    yasem-dunehd-api \
-    yasem-samsung-smarttv-api
+    yasem-qt-mediaplayer
 
-for(name, PLUGINS) {
-    exists($${name}) {
-        message("Found submodule $${name}")
-        SUBDIRS += $${name}
+
+SUBDIRS =
+
+entries = $$files(yasem-*)
+for(name, entries): {
+    if(!contains(EXCLUDE, $$name)) {
+        exists($${name}/$${name}.pro): {
+            message("Including $${name}")
+            SUBDIRS += $$name
+        }
     }
 }
 
+message('Subdirs:'  $$SUBDIRS)
+
+
 !android-g++: {
-    SUBDIRS += yasem-web-browser
     NDK_TOOLCHAIN_PREFIX = x86
 }
 
