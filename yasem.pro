@@ -7,16 +7,19 @@ CONFIG += c++11
 DESTDIR = ../bin
 DLLDESTDIR = ../bin/plugins
 
-EXCLUDE = \
-    yasem-vlc-mediaplayer \
-    yasem-qt-mediaplayer
+if(exists(plugins-exclude.pri)) {
+    include(plugins-exclude.pri)
+}
+else {
+    PLUGINS_EXCLUDE_LIST =
+}
 
 
 SUBDIRS =
 
 entries = $$files(yasem-*)
 for(name, entries): {
-    if(!contains(EXCLUDE, $$name)) {
+    if(!contains(PLUGINS_EXCLUDE_LIST, $$name)) {
         exists($${name}/$${name}.pro): {
             message("Including $${name}")
             SUBDIRS += $$name
@@ -25,7 +28,6 @@ for(name, entries): {
 }
 
 message('Subdirs:'  $$SUBDIRS)
-
 
 !android-g++: {
     NDK_TOOLCHAIN_PREFIX = x86
