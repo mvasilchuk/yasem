@@ -19,6 +19,7 @@ to run
     cd bin
     ./yasem
 
+There is no GUI for application configuring, so if you need to change some configuration, go to ~/.config/yasem.
 
 #### Requirements
 
