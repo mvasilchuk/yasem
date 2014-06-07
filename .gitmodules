@@ -1,43 +1,43 @@
 
 [submodule "yasem-core"]
 	path = yasem-core
-	url = git@github.com:mvasilchuk/yasem-core.git
+	url = https://github.com/mvasilchuk/yasem-core.git
 [submodule "yasem-desktop-gui"]
 	path = yasem-desktop-gui
-	url = git@github.com:mvasilchuk/yasem-desktop-gui.git
+	url = https://github.com/mvasilchuk/yasem-desktop-gui.git
 [submodule "yasem-dunehd-api"]
 	path = yasem-dunehd-api
-	url = git@github.com:mvasilchuk/yasem-dunehd-api.git
+	url = https://github.com/mvasilchuk/yasem-dunehd-api.git
 [submodule "yasem-ini-datasource"]
 	path = yasem-ini-datasource
-	url = git@github.com:mvasilchuk/yasem-ini-datasource.git
+	url = https://github.com/mvasilchuk/yasem-ini-datasource.git
 [submodule "yasem-mag-api"]
 	path = yasem-mag-api
-	url = git@github.com:mvasilchuk/yasem-mag-api.git
+	url = https://github.com/mvasilchuk/yasem-mag-api.git
 [submodule "yasem-qtav-mediaplayer"]
 	path = yasem-qtav-mediaplayer
-	url = git@github.com:mvasilchuk/yasem-qtav-mediaplayer.git
+	url = https://github.com/mvasilchuk/yasem-qtav-mediaplayer.git
 [submodule "yasem-web-browser"]
 	path = yasem-web-browser
-	url = git@github.com:mvasilchuk/yasem-web-browser.git
+	url = https://github.com/mvasilchuk/yasem-web-browser.git
 [submodule "yasem-web-server"]
 	path = yasem-web-server
-	url = git@github.com:mvasilchuk/yasem-web-server.git
+	url = https://github.com/mvasilchuk/yasem-web-server.git
 [submodule "yasem-qt-mediaplayer"]
 	path = yasem-qt-mediaplayer
-	url = git@github.com:mvasilchuk/yasem-qt-mediaplayer.git
+	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
 [submodule "yasem-samsung-smarttv-api"]
 	path = yasem-samsung-smarttv-api
-	url = git@github.com:mvasilchuk/yasem-samsung-smarttv-api.git
+	url = https://github.com/mvasilchuk/yasem-samsung-smarttv-api.git
 [submodule "yasem-tray-icon"]
 	path = yasem-tray-icon
-	url = git@github.com:mvasilchuk/yasem-tray-icon.git
+	url = https://github.com/mvasilchuk/yasem-tray-icon.git
 #[submodule "yasem-vlc-mediaplayer"]
 #	path = yasem-vlc-mediaplayer
-#	url = git@github.com:mvasilchuk/yasem-vlc-mediaplayer.git
+#	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
 [submodule "yase-core"]
 	path = yase-core
-	url = git@github.com:mvasilchuk/yasem-core.git
+	url = https://github.com/mvasilchuk/yasem-core.git
 [submodule "yasem-vlc-mediaplayer"]
 	path = yasem-vlc-mediaplayer
-	url = git@github.com:mvasilchuk/yasem-vlc-mediaplayer.git
+	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
