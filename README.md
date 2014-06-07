@@ -2,7 +2,7 @@
 
 Yasem (Yet Another Stb EMulator) is a IPTV Set-Top-Box emulator for desktop platforms.
 
-**YASEM is free software licensed under the term of LGPL v2.1. Some of its components may be licensed under different terms.**
+**YASEM is free software licensed under the term of GPL v2. Some of its components may be licensed under different terms.**
 
 #### How to compile
     
