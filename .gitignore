@@ -33,15 +33,6 @@ install_manifest.txt
 # Qt
 # C++ objects and libs
 
-*.slo
-*.lo
-*.o
-*.a
-*.la
-*.lai
-*.so
-*.dll
-*.dylib
 
 # Qt-es
 
@@ -61,3 +52,6 @@ Makefile*
 *.autosave
 
 .directory
+/bin/
+/third_party/
+/android/

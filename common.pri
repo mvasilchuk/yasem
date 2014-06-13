@@ -1,4 +1,6 @@
+QMAKE_CXXFLAGS += -pedantic -Wall -Wextra -rdynamic -ldl
 
+CONFIG += debug
 
 BIN_DIR = bin
 PLUGIN_DIR = plugins
