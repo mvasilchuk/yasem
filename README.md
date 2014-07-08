@@ -21,6 +21,13 @@ to run
 
 There is no GUI for application configuring, so, if you need to change settings, go to ~/.config/yasem.
 
+You can use some of command line options:
+
+    --fullscreen - to run App in fullscreen mode
+    --developer-tools - to open developer tools on start (the same tools as in Chrome/Chromium)
+    
+You also may open developer tools anytime from context menu (keep in mind: in current implementation some of portals may override right buttom click, so you may need to open tools before such portal loading).
+
 #### Requirements
 
 * Qt 5 (5.2.1+ is recommended) with Webkit support
