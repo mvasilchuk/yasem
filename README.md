@@ -19,7 +19,7 @@ to run
     cd bin
     ./yasem
     
-If you cannot build the App, you may try to run the last successful automated debug build for Linux (x86_64; Qt 5.3 is needed) from [archive](http://jenkins.mvas.eu/job/yasem/default/lastBuild/artifact/bin/*zip*/bin.zip)
+If you cannot build the App, you may try to run the last successful automated debug build for Linux (x86_64; Qt 5.3 is needed) from [archive](http://jenkins.mvas.eu/job/yasem/default/lastBuild/artifact/bin/*zip*/bin.zip).
 
 #### Configuration
 
