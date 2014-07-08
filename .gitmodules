@@ -23,18 +23,18 @@
 [submodule "plugins/yasem-web-server"]
 	path = plugins/yasem-web-server
 	url = https://github.com/mvasilchuk/yasem-web-server.git
-[submodule "plugins/yasem-qt-mediaplayer"]
-	path = plugins/yasem-qt-mediaplayer
-	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
+#[submodule "plugins/yasem-qt-mediaplayer"]
+#	path = plugins/yasem-qt-mediaplayer
+#	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
 [submodule "plugins/yasem-samsung-smarttv-api"]
 	path = plugins/yasem-samsung-smarttv-api
 	url = https://github.com/mvasilchuk/yasem-samsung-smarttv-api.git
 [submodule "plugins/yasem-tray-icon"]
 	path = plugins/yasem-tray-icon
 	url = https://github.com/mvasilchuk/yasem-tray-icon.git
-[submodule "plugins/yasem-vlc-mediaplayer"]
-	path = plugins/yasem-vlc-mediaplayer
-	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
+#[submodule "plugins/yasem-vlc-mediaplayer"]
+#	path = plugins/yasem-vlc-mediaplayer
+#	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
 #[submodule "plugins/yasem-vlc-mediaplayer"]
 #	path = plugins/yasem-vlc-mediaplayer
 #	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
