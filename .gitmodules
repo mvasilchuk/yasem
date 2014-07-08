@@ -2,42 +2,39 @@
 [submodule "yasem-core"]
 	path = yasem-core
 	url = https://github.com/mvasilchuk/yasem-core.git
-[submodule "yasem-desktop-gui"]
-	path = yasem-desktop-gui
+[submodule "plugins/yasem-desktop-gui"]
+	path = plugins/yasem-desktop-gui
 	url = https://github.com/mvasilchuk/yasem-desktop-gui.git
-[submodule "yasem-dunehd-api"]
-	path = yasem-dunehd-api
+[submodule "plugins/yasem-dunehd-api"]
+	path = plugins/yasem-dunehd-api
 	url = https://github.com/mvasilchuk/yasem-dunehd-api.git
-[submodule "yasem-ini-datasource"]
-	path = yasem-ini-datasource
+[submodule "plugins/yasem-ini-datasource"]
+	path = plugins/yasem-ini-datasource
 	url = https://github.com/mvasilchuk/yasem-ini-datasource.git
-[submodule "yasem-mag-api"]
-	path = yasem-mag-api
+[submodule "plugins/yasem-mag-api"]
+	path = plugins/yasem-mag-api
 	url = https://github.com/mvasilchuk/yasem-mag-api.git
-[submodule "yasem-qtav-mediaplayer"]
-	path = yasem-qtav-mediaplayer
+[submodule "plugins/yasem-qtav-mediaplayer"]
+	path = plugins/yasem-qtav-mediaplayer
 	url = https://github.com/mvasilchuk/yasem-qtav-mediaplayer.git
-[submodule "yasem-web-browser"]
-	path = yasem-web-browser
+[submodule "plugins/yasem-web-browser"]
+	path = plugins/yasem-web-browser
 	url = https://github.com/mvasilchuk/yasem-web-browser.git
-[submodule "yasem-web-server"]
-	path = yasem-web-server
+[submodule "plugins/yasem-web-server"]
+	path = plugins/yasem-web-server
 	url = https://github.com/mvasilchuk/yasem-web-server.git
-[submodule "yasem-qt-mediaplayer"]
-	path = yasem-qt-mediaplayer
+[submodule "plugins/yasem-qt-mediaplayer"]
+	path = plugins/yasem-qt-mediaplayer
 	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
-[submodule "yasem-samsung-smarttv-api"]
-	path = yasem-samsung-smarttv-api
+[submodule "plugins/yasem-samsung-smarttv-api"]
+	path = plugins/yasem-samsung-smarttv-api
 	url = https://github.com/mvasilchuk/yasem-samsung-smarttv-api.git
-[submodule "yasem-tray-icon"]
-	path = yasem-tray-icon
+[submodule "plugins/yasem-tray-icon"]
+	path = plugins/yasem-tray-icon
 	url = https://github.com/mvasilchuk/yasem-tray-icon.git
-#[submodule "yasem-vlc-mediaplayer"]
-#	path = yasem-vlc-mediaplayer
-#	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
-[submodule "yase-core"]
-	path = yase-core
-	url = https://github.com/mvasilchuk/yasem-core.git
-[submodule "yasem-vlc-mediaplayer"]
-	path = yasem-vlc-mediaplayer
+[submodule "plugins/yasem-vlc-mediaplayer"]
+	path = plugins/yasem-vlc-mediaplayer
 	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
+#[submodule "plugins/yasem-vlc-mediaplayer"]
+#	path = plugins/yasem-vlc-mediaplayer
+#	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git

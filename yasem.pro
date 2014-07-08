@@ -1,6 +1,8 @@
+include(global.pri)
+
 TEMPLATE = subdirs
 
-CONFIG += ordered debug_and_release create_prl link_prl
+CONFIG += debug_and_release
 
 CONFIG += c++11
 
@@ -14,18 +16,33 @@ else {
     PLUGINS_EXCLUDE_LIST =
 }
 
+if(contains(DEFINES, STATIC_BUILD))
+{
+    LIBS += -Lstatic_plugins
+    CONFIG += create_prl link_prl
+}
 
-SUBDIRS =
+SUBDIRS = yasem-core
+CLASSES =
 
-entries = $$files(yasem-*)
-for(name, entries): {
+entries = $$files(plugins/yasem-*)
+for(item, entries): {
+    data = $$split(item, "/")
+    name = $$member(data, 1)
+
     if(!contains(PLUGINS_EXCLUDE_LIST, $$name)) {
-        exists($${name}/$${name}.pro): {
+        exists(plugins/$${name}/$${name}.pro): {
             message("Including $${name}")
-            SUBDIRS += $$name
+            SUBDIRS += plugins/$$name
+
+            if(contains(DEFINES, STATIC_BUILD))
+            {
+                LIBS += -lplugins/$$name
+            }
         }
     }
 }
+
 
 message('Subdirs:'  $$SUBDIRS)
 

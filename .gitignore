@@ -55,3 +55,6 @@ Makefile*
 /bin/
 /third_party/
 /android/
+*.tasks
+/plugins-exclude.pri
+*.cppcheck
