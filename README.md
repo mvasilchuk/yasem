@@ -1,6 +1,6 @@
 # YASEM
 
-Yasem (Yet Another Stb EMulator) is a IPTV Set-Top-Box emulator for desktop platforms.
+Yasem (Yet Another Stb EMulator) is a IPTV Set-Top-Box emulator for desktop platforms. It may be used to load IPTV portals to watch internet TV or for developing such portals using build-in developer tools from WebKit (like in Chrome/Chromium).
 
 **YASEM is free software licensed under the term of GPL v2. Some of its components may be licensed under different terms.**
 
@@ -28,7 +28,7 @@ There is no GUI for application configuring, so, if you need to change settings,
 You can use some of command line options:
 
     --fullscreen - to run App in fullscreen mode
-    --developer-tools - to open developer tools on start (the same tools as in Chrome/Chromium)
+    --developer-tools - to open developer tools on start
     
 You also may open developer tools anytime from context menu (keep in mind: in current implementation some of portals may override right button click, so you may need to open tools before such portal loading).
 
