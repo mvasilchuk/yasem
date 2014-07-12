@@ -59,3 +59,4 @@ OTHER_FILES += \
     README.md
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
