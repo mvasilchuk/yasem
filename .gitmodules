@@ -32,9 +32,9 @@
 [submodule "plugins/yasem-tray-icon"]
 	path = plugins/yasem-tray-icon
 	url = https://github.com/mvasilchuk/yasem-tray-icon.git
-#[submodule "plugins/yasem-rc-server"]
-#	path = plugins/yasem-rc-server
-#	url = https://github.com/mvasilchuk/yasem-rc-server.git
+#[submodule "plugins/yasem-api-server"]
+#	path = plugins/yasem-api-server
+#	url = https://github.com/mvasilchuk/yasem-api-server.git
 #[submodule "plugins/yasem-vlc-mediaplayer"]
 #	path = plugins/yasem-vlc-mediaplayer
 #	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git

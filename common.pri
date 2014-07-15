@@ -1,6 +1,8 @@
 include(global.pri)
 
-QMAKE_CXXFLAGS += -pedantic -Wall -Wextra -ldl
+contains(DEFINES, DEBUG_ALL) {
+    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra -ldl
+}
 
 linux: {
  QMAKE_CXXFLAGS += -rdynamic
