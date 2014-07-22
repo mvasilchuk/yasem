@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <id>com.example.yasem</id>
+    <name>yasem</name>
+    <versionNumber>1.0.0</versionNumber>
+    <description>DESCRIPTION</description>
+
+    <initialWindow>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+        <autoOrients>true</autoOrients>
+        <aspectRatio>landscape</aspectRatio>
+    </initialWindow>
+    <publisher>PUBLISHER</publisher>
+    <copyright>COPYRIGHT</copyright>
+    <arg>-style</arg>
+    <!-- available styles are bb10dark and bb10bright -->
+    <arg>bb10dark</arg>
+
+    <action system="true">run_native</action>
+
+    <!-- yasem should point to the project binary, path can be relative -->
+    <asset entry="true" path="yasem" type="Qnx/Elf">yasem</asset>
+</qnx>
