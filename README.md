@@ -28,7 +28,7 @@ If you cannot build the App, you may try to run the last successful automated de
 * Patched version of [QtAV](https://github.com/wang-bin/QtAV) (included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
 
 ##### Optional
-* smbtree - for SAMBA support
+* cifs-utils & smbtree - for SAMBA support
 * sudo with no-password option for "mount" command - to mount network shares (SAMBA).
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
