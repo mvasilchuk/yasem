@@ -1,10 +1,13 @@
 include(global.pri)
 
+QT += testlib
+CONFIG += testcase
+
 contains(DEFINES, DEBUG_ALL) {
     QMAKE_CXXFLAGS += -pedantic -Wall -Wextra -ldl
 }
 
-linux: {
+linux-gcc: {
  QMAKE_CXXFLAGS += -rdynamic
 }
 
@@ -32,4 +35,6 @@ contains(DEFINES, STATIC_BUILD) {
     DEFAULT_PLUGIN_DIR = $$OUT_PWD/../../$$BIN_DIR/$$PLUGIN_DIR
 }
 
+TRANSLATIONS += lang/translation_ru.ts \
+                lang/translation_uk.ts
 

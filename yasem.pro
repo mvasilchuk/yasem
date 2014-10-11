@@ -1,5 +1,8 @@
 include(global.pri)
 
+lessThan(QT_MAJOR_VERSION, 5): error("This app requires Qt 5.2+")
+equals(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 2): error("This app requires Qt 5.2+")
+
 TEMPLATE = subdirs
 
 CONFIG += debug_and_release
@@ -56,7 +59,8 @@ symbian:TARGET.CAPABILITY = ReadDeviceData
 OTHER_FILES += \
     android/AndroidManifest.xml \
     LICENSE \
-    README.md
+    README.md \
+    bar-descriptor.xml
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 

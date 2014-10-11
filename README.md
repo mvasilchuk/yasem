@@ -33,6 +33,19 @@ If you cannot build the App, you may try to run the last successful automated de
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
 
+### Installation on different OS
+
+### Ubuntu
+
+    sudo apt-get install libavutil-dev libavformat-dev libavcodec-dev libswscale-dev portaudio19-dev libopenal-dev libavresample-dev
+
+then follow "How to compile" block.
+
+### Arch
+
+    yaourt -S yasem-git
+
+
 #### Configuration
 
 There is no GUI for application configuring, so, if you need to change settings, go to ~/.config/yasem.
