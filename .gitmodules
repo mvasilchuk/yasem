@@ -41,3 +41,9 @@
 #[submodule "plugins/yasem-vlc-mediaplayer"]
 #	path = plugins/yasem-vlc-mediaplayer
 #	url = https://github.com/mvasilchuk/yasem-vlc-mediaplayer.git
+[submodule "plugins/vlc-qt"]
+	path = plugins/vlc-qt
+	url = git://github.com/ntadej/vlc-qt.git
+[submodule "plugins/yasem-api-server"]
+	path = plugins/yasem-api-server
+	url = /home/maxim/Dropbox/projects/yasem/plugins/yasem-api-server
