@@ -9,8 +9,7 @@ Yasem (Yet Another Stb EMulator) is a IPTV Set-Top-Box emulator for desktop plat
     git clone https://github.com/mvasilchuk/yasem.git
     cd yasem
     git submodule update --init --recursive
-    git submodule foreach --recursive git fetch
-    git submodule foreach git merge origin master
+    git submodule foreach --recursive git submodule update --init 
     qmake
     make
 
