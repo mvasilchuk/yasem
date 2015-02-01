@@ -47,3 +47,6 @@
 [submodule "plugins/yasem-api-server"]
 	path = plugins/yasem-api-server
 	url = /home/maxim/Dropbox/projects/yasem/plugins/yasem-api-server
+[submodule "plugins/yasem-web-gui-plugin"]
+	path = plugins/yasem-web-gui-plugin
+	url = https://github.com/mvasilchuk/yasem-web-gui-plugin.git
