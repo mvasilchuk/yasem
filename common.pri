@@ -11,7 +11,7 @@ linux-gcc: {
  QMAKE_CXXFLAGS += -rdynamic
 }
 
-CONFIG += debug
+CONFIG += debug_and_release
 
 BIN_DIR = bin
 DEFAULT_BIN_DIR = $$OUT_PWD/../$$BIN_DIR
