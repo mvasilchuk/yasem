@@ -58,3 +58,4 @@ Makefile*
 *.tasks
 /plugins-exclude.pri
 *.cppcheck
+/yasem-web-ui/

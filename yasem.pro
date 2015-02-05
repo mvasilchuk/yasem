@@ -59,6 +59,7 @@ symbian:TARGET.CAPABILITY = ReadDeviceData
 OTHER_FILES += \
     android/AndroidManifest.xml \
     LICENSE \
+    rules.cppcheck \
     README.md \
     bar-descriptor.xml
 
