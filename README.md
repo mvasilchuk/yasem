@@ -53,7 +53,9 @@ then follow "How to compile" block.
 5. Open QtCreator, open yasem project then open **Projects** page on a sidebar and in **Build** configuration set **Build environment** variables:
 
     CPLUS_INCLUDE_PATH = C:\libav-i686-w64-mingw32-11.1\usr\include
+    
     C_INCLUDE_PATH = C:\libav-i686-w64-mingw32-11.1\usr\include
+    
     LIBRARY_PATH = C:\libav-i686-w64-mingw32-11.1\usr\lib
 
 _(change paths to yours)_
