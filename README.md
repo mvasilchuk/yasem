@@ -60,7 +60,7 @@ then follow "How to compile" block.
 
 _(change paths to yours)_
 
-6. Build the project
+Build the project
 
 Now you have either to add paths to your Qt binaries (i.e. C:\Qt\5.4\mingw491\_32\bin ), MinGW binaries (C:\\Qt\\Tools\\MinGW\\bin), libav binaries (C:\\libav\-i686\-w64\-mingw32\-11.1\\usr\\bin) to **PATH** environment variable, or copy required DLLs from that folders (you have to use this method also if you want to distribute the app). The simplest way to do that is to use [Dependency Walker](http://www.dependencywalker.com/). After you build the application in your build folder you'll see bin/ directory with yasem.exe, Qt5AV.dll, Qt5Widgets.dll and folders gui/ and plugins/ inside it. To make it easier to find all dependencies copy all yasem\-\*.dll files from plugins/ into parent folder (bin/) and run Dependency Walker on yasem.exe and DLLs (except the ones you'll copy from another folders). In general you need to copy all DLLs from libav bin/ folder (C:\\libav\-x86\\_64\-w64\-mingw32\-11.1\\usr\\bin),
 most of Qt5*.dll from Qt binaries folder (C:\\Qt\\5.4\\mingw49_32\\bin; see if they are debug or release) and some MinGW dependencies.
