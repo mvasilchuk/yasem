@@ -36,7 +36,7 @@ _WARNING_: Some functionality may not be available with Qt version less than 5.2
 
 ### Ubuntu
 
-    sudo apt-get install libavutil-dev libavformat-dev libavcodec-dev libswscale-dev portaudio19-dev libopenal-dev libavresample-dev
+    sudo apt-get install libavutil-dev libavformat-dev libavcodec-dev libswscale-dev portaudio19-dev libopenal-dev libavresample-dev libva-dev libxv-dev libass-dev
 
 then follow "How to compile" block.
 
