@@ -46,7 +46,7 @@ then follow "How to compile" block.
 
 ### Windows
 
-See [QtAV's How to build](https://github.com/wang-bin/QtAV/wiki/Build-QtAV) (don't clone QtAV's repo, because it's already included) and then follow the this Readme's How to compile block.
+See [QtAV's "How to build/Setup-The-Environment"](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) and then follow the this Readme's "How to compile" block.
 
 #### Configuration
 
