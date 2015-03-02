@@ -46,7 +46,10 @@ then follow "How to compile" block.
 
 ### Windows
 
-See QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) and then follow this Readme's "How to compile" block.
+1. Download and install the latest version of [Qt](http://www.qt.io/download-open-source/) and QtCreator.
+2. Download yasem from this repository and open it in QtCreator.
+3. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
+4. Build and run yasem.
 
 #### Configuration
 
