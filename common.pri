@@ -3,6 +3,8 @@ include(global.pri)
 QT += testlib
 CONFIG += testcase
 
+DEFINES += DEBUG_ALL
+
 contains(DEFINES, DEBUG_ALL) {
     QMAKE_CXXFLAGS += -pedantic -Wall -Wextra -ldl
 }
