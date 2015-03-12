@@ -59,7 +59,7 @@ You can use some of command line options:
     --fullscreen - to run App in fullscreen mode
     --developer-tools - to open developer tools on start
     
-You also may open developer tools anytime from context menu (keep in mind: in current implementation some of portals may override right button click, so you may need to open tools before such portal loading).
+You also may open developer tools anytime from context menu.
 
 - - -
 
