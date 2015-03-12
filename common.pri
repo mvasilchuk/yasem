@@ -1,7 +1,10 @@
 include(global.pri)
 
+CORE_ROOT_DIR = $$top_srcdir/yasem-core
+
 QT += testlib
 CONFIG += testcase
+CONFIG += c++11
 
 DEFINES += DEBUG_ALL
 
@@ -12,31 +15,41 @@ contains(DEFINES, DEBUG_ALL) {
     }
 }
 linux-gcc: {
- QMAKE_CXXFLAGS += -rdynamic
+    QMAKE_CXXFLAGS += -rdynamic
 }
 
 CONFIG += debug_and_release
 
-BIN_DIR = bin
-DEFAULT_BIN_DIR = $$OUT_PWD/../$$BIN_DIR
+OUT_DIR = $$top_builddir/bin
 
-contains(DEFINES, STATIC_BUILD) {
+if(contains(DEFINES, STATIC_BUILD)): {
     message("Building $$TARGET as static library")
-    !equals(TEMPLATE, app) {
+    equals(TEMPLATE, lib) {
         CONFIG += staticlib
-        TEMPLATE = lib
+        PLUGIN_DIR = static_plugins
     }
-
-    PLUGIN_DIR = static_plugins
-    DEFAULT_PLUGIN_DIR = $$OUT_PWD/../../$$BIN_DIR/$$PLUGIN_DIR
 } else {
-   message("Building $$TARGET as dynamic library")
-    !equals(TEMPLATE, app) {
-        TEMPLATE = lib
+    !build_pass:message("Building $$TARGET as dynamic library")
+    equals(TEMPLATE, lib) {
+        PLUGIN_DIR = plugins
     }
+}
 
-    PLUGIN_DIR = plugins
-    DEFAULT_PLUGIN_DIR = $$OUT_PWD/../../$$BIN_DIR/$$PLUGIN_DIR
+equals(TEMPLATE, lib) {
+    DESTDIR = $$OUT_DIR/$$PLUGIN_DIR
+    INCLUDEPATH += $${CORE_ROOT_DIR}/
+    DEPENDPATH += $${CORE_ROOT_DIR}/
+
+SOURCES += \
+    $${CORE_ROOT_DIR}/plugin.cpp
+
+HEADERS += \
+    $${CORE_ROOT_DIR}/abstractpluginobject.h \
+    $${CORE_ROOT_DIR}/plugin.h \
+}
+
+equals(TEMPLATE, app) {
+    DESTDIR = $$OUT_DIR
 }
 
 TRANSLATIONS += lang/translation_ru.ts \

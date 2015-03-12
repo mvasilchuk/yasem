@@ -6,7 +6,7 @@ equals(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 2): error("This app requ
 TEMPLATE = subdirs
 
 # This will enable Qml-based GUI for the app. Unstable yet!
-#CONFIG += USE_QML_WIDGETS
+#DEFINES += USE_QML_WIDGETS
 
 CONFIG += debug_and_release
 
@@ -22,7 +22,7 @@ else {
 
 }
 
-contains(CONFIG, USE_QML_WIDGETS): {
+contains(DEFINES, USE_QML_WIDGETS): {
     PLUGINS_EXCLUDE_LIST += yasem-desktop-gui
 } else: {
     PLUGINS_EXCLUDE_LIST += yasem-qml-gui
@@ -39,7 +39,9 @@ if(contains(CONFIG, STATIC_BUILD))
 SUBDIRS = yasem-core
 CLASSES =
 
-PLUGINS_EXCLUDE_LIST += yasem-dunehd-api yasem-samsung-smarttv-api
+PLUGINS_EXCLUDE_LIST += yasem-dunehd-api \
+    yasem-samsung-smarttv-api \
+    yasem-web-server # Not migrated yet
 
 entries = $$files(plugins/yasem-*)
 for(item, entries): {
