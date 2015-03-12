@@ -46,7 +46,7 @@ then follow "How to compile" block.
 
 1. Download and install the latest version of [Qt](http://www.qt.io/download-open-source/) and QtCreator.
 2. Download yasem from this repository and open it in QtCreator.
-3. Downnload [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html)
+3. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html)
 4. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
 5. Build and run yasem.
 
