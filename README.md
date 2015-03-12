@@ -63,5 +63,5 @@ You also may open developer tools anytime from context menu (keep in mind: in cu
 
 - - -
 
-> Copyright &copy; 2013-2014 Maxim Vasilchuk mvasilchuk@gmail.com
+> Copyright &copy; 2013-2015 Maxim Vasilchuk mvasilchuk@gmail.com
 
