@@ -20,12 +20,12 @@ to run
 
 #### Requirements
 
-* Qt 5 (5.2.1+ is recommended) with Webkit support
-* C++11 compatible compiler (tested with GCC and Clang)
+* Qt 5 (5.2.1+ is recommended) with Webkit support;
+* C++11 compatible compiler (tested with GCC and Clang);
 * Patched version of [QtAV](https://github.com/wang-bin/QtAV) (included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
 
 ##### Optional
-* cifs-utils & smbtree - for SAMBA support
+* cifs-utils & smbtree - for SAMBA support;
 * sudo with no-password option for "mount" command - to mount network shares (SAMBA).
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
@@ -46,7 +46,7 @@ then follow "How to compile" block.
 
 1. Download and install the latest version of [Qt](http://www.qt.io/download-open-source/) and QtCreator.
 2. Download yasem from this repository and open it in QtCreator.
-3. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html)
+3. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
 4. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
 5. Build and run yasem.
 
