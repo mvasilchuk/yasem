@@ -1,6 +1,6 @@
 # YASEM
 
-Yasem (Yet Another Stb EMulator) is a IPTV Set-Top-Box emulator for desktop platforms. It may be used to load IPTV portals to watch internet TV or for developing such portals using build-in developer tools from WebKit (like in Chrome/Chromium).
+Yasem (Yet Another Stb EMulator) is an IPTV Set-Top-Box emulator for desktop platforms. It may be used to load IPTV portals to watch internet TV or for developing such portals using build-in developer tools from WebKit (like in Chrome/Chromium).
 
 **YASEM is free software licensed under the term of GPL v2. Some of its components may be licensed under different terms.**
 
@@ -17,8 +17,6 @@ to run
 
     cd bin
     ./yasem
-    
-If you cannot build the App, you may try to run the last successful automated debug build for Linux (x86_64; Qt 5.3 is needed) from [archive](http://jenkins.mvas.eu/job/yasem/default/lastBuild/artifact/bin/*zip*/bin.zip).
 
 #### Requirements
 
