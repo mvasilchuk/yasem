@@ -18,6 +18,9 @@ to run
     cd bin
     ./yasem
 
+You may also change output directory by passing variable YASEM_OUTPUT_DIR to qmake
+    qmake YASEM_OUTPUT_DIR=/destination/directory
+
 #### Requirements
 
 * Qt 5 (5.2.1+ is recommended) with Webkit support;
