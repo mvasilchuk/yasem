@@ -19,6 +19,7 @@ to run
     ./yasem
 
 You may also change output directory by passing variable YASEM_OUTPUT_DIR to qmake
+
     qmake YASEM_OUTPUT_DIR=/destination/directory
 
 #### Requirements
