@@ -1,4 +1,3 @@
-include(global.pri)
 
 CORE_ROOT_DIR = $$top_srcdir/yasem-core
 
@@ -20,23 +19,10 @@ linux-gcc: {
 
 CONFIG += debug_and_release
 
-OUT_DIR = $$top_builddir/bin
-
-if(contains(DEFINES, STATIC_BUILD)): {
-    message("Building $$TARGET as static library")
-    equals(TEMPLATE, lib) {
-        CONFIG += staticlib
-        PLUGIN_DIR = static_plugins
-    }
-} else {
-    !build_pass:message("Building $$TARGET as dynamic library")
-    equals(TEMPLATE, lib) {
-        PLUGIN_DIR = plugins
-    }
-}
+include($$top_srcdir/dir_config.pri)
 
 equals(TEMPLATE, lib) {
-    DESTDIR = $$OUT_DIR/$$PLUGIN_DIR
+    DESTDIR = $$OUT_DIR/$$PLUGINS_OUT_DIR
     INCLUDEPATH += $${CORE_ROOT_DIR}/
     DEPENDPATH += $${CORE_ROOT_DIR}/
 

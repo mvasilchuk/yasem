@@ -1,4 +1,3 @@
-include(global.pri)
 
 lessThan(QT_MAJOR_VERSION, 5): error("This app requires Qt 5.2+")
 equals(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 2): error("This app requires Qt 5.2+")
@@ -12,8 +11,11 @@ CONFIG += debug_and_release
 
 CONFIG += c++11
 
-DESTDIR = ../bin
-DLLDESTDIR = ../bin/plugins
+include(dir_config.pri)
+
+message("Project output directory: $${OUT_DIR}")
+message("Plugins subdirectory: $${PLUGINS_OUT_DIR}")
+message("Libs subdirectory: $${LIBS_OUT_DIR}")
 
 if(exists(plugins-exclude.pri)) {
     include(plugins-exclude.pri)
