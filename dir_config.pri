@@ -1,5 +1,5 @@
  
-isEmpty(BINARIES_OUTPUT_DIR) {
+isEmpty(YASEM_OUTPUT_DIR) {
     OUT_DIR = $$top_builddir/bin
 } else {
     OUT_DIR = $$YASEM_OUTPUT_DIR
