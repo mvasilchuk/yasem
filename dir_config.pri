@@ -2,7 +2,7 @@
 isEmpty(BINARIES_OUTPUT_DIR) {
     OUT_DIR = $$top_builddir/bin
 } else {
-    OUT_DIR = $$BINARIES_OUTPUT_DIR
+    OUT_DIR = $$YASEM_OUTPUT_DIR
 } 
  
 if(contains(DEFINES, STATIC_BUILD)): {
