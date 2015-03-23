@@ -63,7 +63,7 @@ You can use some of command line options:
     --fullscreen - to run App in fullscreen mode
     --developer-tools - to open developer tools on start
     
-You also may open developer tools anytime from context menu.
+You also may open developer tools anytime from a menu.
 
 - - -
 
