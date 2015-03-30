@@ -67,7 +67,7 @@ You also may open developer tools anytime from a menu.
 
 #### DONATE
 
-Bitcoin: 1J1r4Ed5v76ym2o52bfY9MZ9XzTuDn4Yjo
+**Bitcoin**: 1J1r4Ed5v76ym2o52bfY9MZ9XzTuDn4Yjo
 
 - - -
 
