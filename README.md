@@ -65,6 +65,10 @@ You can use some of command line options:
     
 You also may open developer tools anytime from a menu.
 
+#### DONATE
+
+Bitcoin: 1J1r4Ed5v76ym2o52bfY9MZ9XzTuDn4Yjo
+
 - - -
 
 > Copyright &copy; 2013-2015 Maxim Vasilchuk mvasilchuk@gmail.com

@@ -41,9 +41,10 @@ if(contains(CONFIG, STATIC_BUILD))
 SUBDIRS = yasem-core
 CLASSES =
 
-PLUGINS_EXCLUDE_LIST += yasem-dunehd-api \
+PLUGINS_EXCLUDE_LIST += \
     yasem-samsung-smarttv-api \
     yasem-web-server # Not migrated yet
+    #yasem-dunehd-api \
 
 entries = $$files(plugins/yasem-*)
 for(item, entries): {
