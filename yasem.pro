@@ -6,6 +6,7 @@ TEMPLATE = subdirs
 
 # This will enable Qml-based GUI for the app. Unstable yet!
 #DEFINES += USE_QML_WIDGETS
+#DEFINES += USE_REAL_TRANSPARENCY
 
 CONFIG += debug_and_release
 
