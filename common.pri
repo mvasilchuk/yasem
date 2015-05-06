@@ -44,6 +44,13 @@ TRANSLATIONS += lang/translation_ru.ts \
 VERSTR = '\\"$${VERSION}\\"'
 DEFINES += MODULE_VERSION=\"$${VERSTR}\"
 
-GIT_VERSION = $$system(git --git-dir $$PWD/.git --work-tree $$PWD describe --always --tags)
-DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
+equals(TARGET, "yasem") {
+    GIT_VERSION = $$system(git --git-dir $$PWD/.git --work-tree $$PWD describe --always --tags)
+    DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
+} else {
+    GIT_VERSION = $$system(git --git-dir plugins/$$TARGET/.git --work-tree $$PWD describe --always --tags)
+    DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
+}
+
+message('revision' $$TARGET $$GIT_VERSION)
 
