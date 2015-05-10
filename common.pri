@@ -52,5 +52,5 @@ equals(TARGET, "yasem") {
     DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
 }
 
-message('revision' $$TARGET $$GIT_VERSION)
+#message('revision' $$TARGET $$GIT_VERSION)
 
