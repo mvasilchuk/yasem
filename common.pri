@@ -52,5 +52,12 @@ equals(TARGET, "yasem") {
     DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
 }
 
+exists( $${top_srcdir}/third_party/google-breakpad ) {
+    include($${top_srcdir}/google-breakpad.pri)
+} else {
+    !build_pass:message("Google Breakpad is missing. Skipping...")
+}
+
+
 #message('revision' $$TARGET $$GIT_VERSION)
 
