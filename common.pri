@@ -32,6 +32,8 @@ SOURCES += \
 HEADERS += \
     $${CORE_ROOT_DIR}/abstractpluginobject.h \
     $${CORE_ROOT_DIR}/plugin.h \
+    $${CORE_ROOT_DIR}/yasemsettings.h \
+    $${CORE_ROOT_DIR}/core.h
 }
 
 equals(TEMPLATE, app) {
@@ -52,10 +54,12 @@ equals(TARGET, "yasem") {
     DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
 }
 
-exists( $${top_srcdir}/third_party/google-breakpad ) {
-    include($${top_srcdir}/google-breakpad.pri)
-} else {
-    !build_pass:message("Google Breakpad is missing. Skipping...")
+CONFIG(release, debug|release) {
+    exists( $${top_srcdir}/third_party/google-breakpad ) {
+        include($${top_srcdir}/google-breakpad.pri)
+    } else {
+        !build_pass:message("Google Breakpad is missing. Skipping...")
+    }
 }
 
 

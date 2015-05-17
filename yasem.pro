@@ -44,7 +44,7 @@ CLASSES =
 
 PLUGINS_EXCLUDE_LIST += \
     yasem-samsung-smarttv-api \
-    yasem-web-server # Not migrated yet
+    # yasem-web-server # Not migrated yet
     #yasem-dunehd-api \
 
 entries = $$files(plugins/yasem-*)
