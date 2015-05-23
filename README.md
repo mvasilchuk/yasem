@@ -56,12 +56,16 @@ then follow "How to compile" block.
 
 #### Configuration
 
-There is no GUI for application configuring, so, if you need to change settings, go to ~/.config/yasem.
+There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/<User>/AppData/Roaming/yasem on Windows).
+
+#### Command line flags
 
 You can use some of command line options:
 
-    --fullscreen - to run App in fullscreen mode
-    --developer-tools - to open developer tools on start
+    --fullscreen - to run App in fullscreen mode.
+    --developer-tools - to open developer tools on start.
+    --verbose - Print extra log information in Release mode (only Linux and OS X).
+    --log=<file name> - Write log in a file. If you don't see a log file, make sure you have write access to a file and/or directory.
     
 You also may open developer tools anytime from a menu.
 
