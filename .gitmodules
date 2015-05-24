@@ -23,9 +23,9 @@
 [submodule "plugins/yasem-web-server"]
 	path = plugins/yasem-web-server
 	url = https://github.com/mvasilchuk/yasem-web-server.git
-#[submodule "plugins/yasem-qt-mediaplayer"]
-#	path = plugins/yasem-qt-mediaplayer
-#	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
+[submodule "plugins/yasem-qt-mediaplayer"]
+	path = plugins/yasem-qt-mediaplayer
+	url = https://github.com/mvasilchuk/yasem-qt-mediaplayer.git
 [submodule "plugins/yasem-samsung-smarttv-api"]
 	path = plugins/yasem-samsung-smarttv-api
 	url = https://github.com/mvasilchuk/yasem-samsung-smarttv-api.git
