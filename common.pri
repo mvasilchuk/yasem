@@ -27,7 +27,8 @@ equals(TEMPLATE, lib) {
     DEPENDPATH += $${CORE_ROOT_DIR}/
 
 SOURCES += \
-    $${CORE_ROOT_DIR}/plugin.cpp
+    $${CORE_ROOT_DIR}/plugin.cpp \
+    $${CORE_ROOT_DIR}/yasemsettings.cpp
 
 HEADERS += \
     $${CORE_ROOT_DIR}/abstractpluginobject.h \
