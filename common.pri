@@ -34,7 +34,9 @@ HEADERS += \
     $${CORE_ROOT_DIR}/abstractpluginobject.h \
     $${CORE_ROOT_DIR}/plugin.h \
     $${CORE_ROOT_DIR}/yasemsettings.h \
-    $${CORE_ROOT_DIR}/core.h
+    $${CORE_ROOT_DIR}/core.h \
+    $${CORE_ROOT_DIR}/statistics.h \
+    $${CORE_ROOT_DIR}/networkstatistics.h \
 }
 
 equals(TEMPLATE, app) {
