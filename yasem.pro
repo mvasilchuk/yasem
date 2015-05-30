@@ -13,6 +13,7 @@ CONFIG += debug_and_release
 CONFIG += c++11
 
 include(dir_config.pri)
+include(configure.pri)
 
 message("Project output directory: $${OUT_DIR}")
 message("Plugins subdirectory: $${PLUGINS_OUT_DIR}")
@@ -80,7 +81,10 @@ OTHER_FILES += \
     LICENSE \
     rules.cppcheck \
     README.md \
-    bar-descriptor.xml
+    bar-descriptor.xml \
+    .qmake.conf \
+    common.pri \
+    configure.pri
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 

@@ -65,6 +65,7 @@ CONFIG(release, debug|release) {
     }
 }
 
+include(configure.pri)
 
 #message('revision' $$TARGET $$GIT_VERSION)
 
