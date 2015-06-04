@@ -66,7 +66,6 @@ for(item, entries): {
     }
 }
 
-
 message('Subdirs:'  $$SUBDIRS)
 
 !android-g++: {
@@ -87,4 +86,8 @@ OTHER_FILES += \
     configure.pri
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+write_file($$PWD/.out_dir, OUT_DIR)
+
+message('build dir ' $$OUT_DIR)
 
