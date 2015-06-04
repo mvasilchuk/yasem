@@ -53,10 +53,31 @@ then follow "How to compile" block.
 3. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
 4. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
 5. Build and run yasem.
+ 
+### OS X
+
+1. Make sure you have clang installed.
+2. Get and install [Qt 5](https://www.qt.io/download-open-source/).
+3. Get yasem sources.
+4. 
+Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. Create a file plugins-exclude.pri with content:
+
+    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+    
+in sources root then run
+
+    qmake
+    make
+    
+That should be enough. If video can't be played make sure you have all required codecs installed.
 
 #### Configuration
 
 There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/<User>/AppData/Roaming/yasem on Windows).
+
+#### Portable version
+
+To make YASEM portable just create **config** directory next to yasem's binary. All settings and profiles will be stored there.
 
 #### Command line flags
 
