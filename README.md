@@ -73,7 +73,7 @@ That should be enough. If video can't be played make sure you have all required 
 
 #### Configuration
 
-There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/<User>/AppData/Roaming/yasem on Windows).
+There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/__User__/AppData/Roaming/yasem on Windows).
 
 #### Portable version
 
