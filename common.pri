@@ -3,7 +3,7 @@ CORE_ROOT_DIR = $$top_srcdir/yasem-core
 
 QT += testlib
 CONFIG += testcase
-CONFIG += c++11
+CONFIG += c++11 yasem_datasource
 
 DEFINES += DEBUG_ALL
 
@@ -36,7 +36,7 @@ HEADERS += \
     $${CORE_ROOT_DIR}/yasemsettings.h \
     $${CORE_ROOT_DIR}/core.h \
     $${CORE_ROOT_DIR}/statistics.h \
-    $${CORE_ROOT_DIR}/networkstatistics.h \
+    $${CORE_ROOT_DIR}/networkstatistics.h
 }
 
 equals(TEMPLATE, app) {
@@ -66,6 +66,4 @@ CONFIG(release, debug|release) {
 }
 
 include(configure.pri)
-
-#message('revision' $$TARGET $$GIT_VERSION)
 
