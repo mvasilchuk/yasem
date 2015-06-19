@@ -3,7 +3,7 @@ CORE_ROOT_DIR = $$top_srcdir/yasem-core
 
 QT += testlib
 CONFIG += testcase
-CONFIG += c++11 yasem_datasource
+CONFIG += c++11
 
 DEFINES += DEBUG_ALL
 
@@ -66,4 +66,18 @@ CONFIG(release, debug|release) {
 }
 
 include(configure.pri)
+
+
+macx: {
+    !contains(CONFIG, NO_BUNDLE) {
+        !build_pass:message($$TARGET "will be packed into a bundle after build")
+        DEFINES += USE_OSX_BUNDLE
+    }
+
+    contains(CONFIG, USE_SYS_LIBS) {
+        !build_pass:message($$TARGET "will use system Qt libs")
+        DEFINES += USE_SYS_LIBS
+    }
+}
+#message('revision' $$TARGET $$GIT_VERSION)
 

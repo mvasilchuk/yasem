@@ -6,7 +6,7 @@ isEmpty(YASEM_OUTPUT_DIR) {
 } 
  
 #put all plugins in bundle
-macx {
+!contains(CONFIG, NO_BUNDLE) {
     PLUGINS_OUT_DIR=$${top_target_app}.app/Contents/Plugins
     LIBS_OUT_DIR=$${top_target_app}.app/Contents/Libs
 } else {

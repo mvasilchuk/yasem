@@ -71,6 +71,8 @@ in sources root then run
     
 That should be enough. If video can't be played make sure you have all required codecs installed.
 
+By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option CONFIG+=NO_BUNDLE to qmake.
+
 #### Configuration
 
 There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/__User__/AppData/Roaming/yasem on Windows).
