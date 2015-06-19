@@ -4,6 +4,8 @@ isEmpty(YASEM_OUTPUT_DIR) {
 } else {
     OUT_DIR = $$YASEM_OUTPUT_DIR
 } 
+
+!macx: CONFIG += NO_BUNDLE
  
 #put all plugins in bundle
 !contains(CONFIG, NO_BUNDLE) {
