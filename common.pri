@@ -55,9 +55,12 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
         $${SDK_DIR}/statistics.h \
         $${SDK_DIR}/networkstatistics.h
 
-    LIBS += -L$$OUT_DIR -lyasem-sdk
+    win32 {
+        LIBS += -L$$OUT_DIR -lyasem-sdk0
+    } else {
+        LIBS += -L$$OUT_DIR -lyasem-sdk
+    }
 }
-
 
 equals(TEMPLATE, app) {
     DESTDIR = $$OUT_DIR
