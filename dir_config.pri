@@ -27,6 +27,3 @@ isEmpty(YASEM_OUTPUT_DIR) {
     LIBS_OUT_DIR = libs
 }
 
-
-
-

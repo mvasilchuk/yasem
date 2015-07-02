@@ -50,3 +50,6 @@
 [submodule "plugins/yasem-web-gui-plugin"]
 	path = plugins/yasem-web-gui-plugin
 	url = https://github.com/mvasilchuk/yasem-web-gui-plugin.git
+[submodule "yasem-sdk"]
+	path = yasem-sdk
+	url = https://github.com/mvasilchuk/yasem-sdk.git

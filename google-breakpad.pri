@@ -14,8 +14,8 @@
 
 GOOGLE_BREAKPAD_DIR=$${top_srcdir}/third_party/google-breakpad
 
-HEADERS += $${top_srcdir}/yasem-core/crashhandler.h
-SOURCES += $${top_srcdir}/yasem-core/crashhandler.cpp
+HEADERS += $${top_srcdir}/yasem-sdk/crashhandler.h
+SOURCES += $${top_srcdir}/yasem-sdk/crashhandler.cpp
 
 INCLUDEPATH += $$GOOGLE_BREAKPAD_DIR
 INCLUDEPATH += $$GOOGLE_BREAKPAD_DIR/src

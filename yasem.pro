@@ -40,7 +40,9 @@ if(contains(CONFIG, STATIC_BUILD))
     CONFIG += create_prl link_prl
 }
 
-SUBDIRS = yasem-core
+SUBDIRS = yasem-sdk \
+    yasem-core
+
 CLASSES =
 
 PLUGINS_EXCLUDE_LIST += \
