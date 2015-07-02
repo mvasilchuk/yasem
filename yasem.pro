@@ -11,6 +11,7 @@ TEMPLATE = subdirs
 CONFIG += debug_and_release
 
 CONFIG += c++11
+CONFIG += ordered
 
 include(dir_config.pri)
 include(configure.pri)
@@ -39,6 +40,7 @@ if(contains(CONFIG, STATIC_BUILD))
     LIBS += -Lstatic_plugins
     CONFIG += create_prl link_prl
 }
+
 
 SUBDIRS = yasem-sdk \
     yasem-core
