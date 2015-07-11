@@ -52,7 +52,7 @@ PLUGINS_EXCLUDE_LIST += \
     # yasem-web-server # Not migrated yet
     #yasem-dunehd-api \
 
-entries = $$files(plugins/yasem-*)
+entries = $$files(plugins/*)
 for(item, entries): {
     data = $$split(item, "/")
     name = $$member(data, 1)
