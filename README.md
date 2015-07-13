@@ -93,7 +93,7 @@ You also may open developer tools anytime from a menu.
 
 #### Known issues
 
-* Qt mediaplayer doesn't work if built with Qt 5.5.
+* Qt media player doesn't work if built with Qt 5.5.
 
 #### DONATE
 
