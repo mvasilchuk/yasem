@@ -29,6 +29,7 @@ You may also change output directory by passing variable YASEM_OUTPUT_DIR to qma
 ##### Optional
 * cifs-utils & smbtree - for SAMBA support;
 * sudo with no-password option for "mount" command - to mount network shares (SAMBA).
+* qca for qt5 - software remote controls support (compatible with MAG 250).
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
 
@@ -89,6 +90,10 @@ You can use some of command line options:
     --log=<file name> - Write log in a file. If you don't see a log file, make sure you have write access to a file and/or directory.
     
 You also may open developer tools anytime from a menu.
+
+#### Known issues
+
+* Qt mediaplayer doesn't work if built with Qt 5.5.
 
 #### DONATE
 
