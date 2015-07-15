@@ -43,17 +43,11 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
     INCLUDEPATH += $${SDK_DIR}/
     DEPENDPATH += $${SDK_DIR}/
 
-    SOURCES += \
-        $${SDK_DIR}/plugin.cpp \
-        $${SDK_DIR}/yasemsettings.cpp
-
     HEADERS += \
         $${SDK_DIR}/abstractpluginobject.h \
         $${SDK_DIR}/plugin.h \
-        $${SDK_DIR}/yasemsettings.h \
-        $${SDK_DIR}/core.h \
-        $${SDK_DIR}/statistics.h \
-        $${SDK_DIR}/networkstatistics.h
+        $${SDK_DIR}/config.h \
+        $${SDK_DIR}/core.h
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
