@@ -36,7 +36,7 @@ include($$top_srcdir/dir_config.pri)
 
 equals(_PRO_FILE_PWD_, $$SDK_DIR): {
     !build_pass::message("Configuring SDK (v. $${VERSION}, rev. $${GIT_VERSION})")
-    DESTDIR = $$OUT_DIR
+    DESTDIR = $$OUT_DIR/$$SDK_OUT_DIR
 } else {
     !build_pass::message("Configuring module $${TARGET} (v. $${VERSION}, rev. $${GIT_VERSION})")
     DESTDIR = $$OUT_DIR/$$PLUGINS_OUT_DIR
@@ -51,6 +51,8 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
+    } macx:contains(CONFIG, app_bundle) {
+        LIBS += -L$$OUT_DIR/yasem.app/Contents/MacOS -lyasem-sdk
     } else {
         LIBS += -L$$OUT_DIR -lyasem-sdk
     }
@@ -87,7 +89,7 @@ CONFIG(release, debug|release) {
 include(configure.pri)
 
 macx: {
-    !contains(CONFIG, NO_BUNDLE) {
+    contains(CONFIG, app_bundle) {
         !build_pass:message($$TARGET "will be packed into a bundle after build")
         DEFINES += USE_OSX_BUNDLE
     }

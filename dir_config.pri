@@ -8,9 +8,10 @@ isEmpty(YASEM_OUTPUT_DIR) {
 !macx: CONFIG += NO_BUNDLE
  
 #put all plugins in bundle
-!contains(CONFIG, NO_BUNDLE) {
+contains(CONFIG, app_bundle) {
     PLUGINS_OUT_DIR=$${top_target_app}.app/Contents/Plugins
     LIBS_OUT_DIR=$${top_target_app}.app/Contents/Libs
+    SDK_OUT_DIR=$${top_target_app}.app/Contents/MacOS # SDK shouldn't be there, but I have not idea how I can make it work in another way:)
 } else {
 
     if(contains(DEFINES, STATIC_BUILD)): {
@@ -24,6 +25,7 @@ isEmpty(YASEM_OUTPUT_DIR) {
         PLUGINS_OUT_DIR = plugins
     }
 
+    SDK_OUT_DIR =
     LIBS_OUT_DIR = libs
 }
 

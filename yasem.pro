@@ -10,7 +10,7 @@ TEMPLATE = subdirs
 
 CONFIG += debug_and_release
 
-CONFIG += c++11
+CONFIG += c++11 app_bundle
 CONFIG += ordered
 
 include(dir_config.pri)
