@@ -51,7 +51,7 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
-    } macx:contains(CONFIG, app_bundle) {
+    } else:macx:contains(CONFIG, app_bundle) {
         LIBS += -L$$OUT_DIR/yasem.app/Contents/MacOS -lyasem-sdk
     } else {
         LIBS += -L$$OUT_DIR -lyasem-sdk
