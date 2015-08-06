@@ -33,7 +33,8 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
-        HEADERS += $${SDK_DIR}/plugin.h
+        HEADERS += $${SDK_DIR}/plugin.h \
+            $${SDK_DIR}/profilemanager.h
 
     } else:macx:contains(CONFIG, app_bundle) {
         LIBS += -L$$OUT_DIR/yasem.app/Contents/MacOS -lyasem-sdk
