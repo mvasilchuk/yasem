@@ -6,18 +6,6 @@ QT += testlib
 CONFIG += testcase
 CONFIG += c++11
 
-DEFINES += DEBUG_ALL
-
-contains(DEFINES, DEBUG_ALL) {
-    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra
-    linux-gcc: {
-        QMAKE_CXXFLAGS += -ldl
-    }
-}
-linux-gcc: {
-    QMAKE_CXXFLAGS += -rdynamic
-}
-
 CONFIG += debug_and_release
 
 VERSTR = '\\"$${VERSION}\\"'
@@ -42,12 +30,6 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
     DESTDIR = $$OUT_DIR/$$PLUGINS_OUT_DIR
     INCLUDEPATH += $${SDK_DIR}/
     DEPENDPATH += $${SDK_DIR}/
-
-    HEADERS += \
-        $${SDK_DIR}/abstractpluginobject.h \
-        $${SDK_DIR}/plugin.h \
-        $${SDK_DIR}/config.h \
-        $${SDK_DIR}/core.h
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
@@ -80,10 +62,33 @@ CONFIG(release, debug|release) {
             }
         }
         #add debug info
-        QMAKE_CXXFLAGS_RELEASE += -g
+        QMAKE_CXXFLAGS_RELEASE += -pedantic -Wall -g  -Wextra -O3 -Wformat=2 -Wshadow
         QMAKE_CFLAGS_RELEASE += -g
         QMAKE_LFLAGS_RELEASE =
     }
+} else: {
+    !build_pass:message("Building with full debug info")
+    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -O1 -Wformat=2 -Wshadow
+    QMAKE_CXXFLAGS += -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC
+    unix: {
+        QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=2
+    }
+    contains(QMAKE_CC, gcc): {
+        QMAKE_CXXFLAGS += -Wlogical-op
+        # -Wconversion -Wfloat-equal
+        unix: {
+            QMAKE_CXXFLAGS += -ldl -rdynamic -lmcheck
+        }  
+    }
+
+    ## Clang & GCC 4.8+
+    QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
+    QMAKE_CFLAGS += -fsanitize=address -fno-omit-frame-pointer
+    QMAKE_LFLAGS += -fsanitize=address
+    # Clang & GCC 4.9+
+    QMAKE_CXXFLAGS += -fsanitize=undefined
+    QMAKE_CFLAGS += -fsanitize=undefined
+    QMAKE_LFLAGS += -fsanitize=undefined
 }
 
 include(configure.pri)
