@@ -33,6 +33,8 @@ equals(_PRO_FILE_PWD_, $$SDK_DIR): {
 
     win32 {
         LIBS += -L$$OUT_DIR -lyasem-sdk0
+        HEADERS += $${SDK_DIR}/plugin.h
+
     } else:macx:contains(CONFIG, app_bundle) {
         LIBS += -L$$OUT_DIR/yasem.app/Contents/MacOS -lyasem-sdk
     } else {
@@ -48,13 +50,14 @@ TRANSLATIONS += lang/translation_ru.ts \
                 lang/translation_uk.ts
 
 CONFIG(release, debug|release) {
+    QMAKE_CXXFLAGS_RELEASE += -pedantic -Wall -Wextra -O3 -Wformat=2 -Wshadow
     !contains(CONFIG, WITH_DEBUG_INFO) {
         # strip debug info
         # Google Breakpad is useles in this mode
         QMAKE_LFLAGS_RELEASE = -Wl,-s
     } else {
         equals(_PRO_FILE_PWD_, $$SDK_DIR): {
-            # Only include Google Brakpad into sdk
+            # Only include Google Breakpad into sdk
             exists( $${top_srcdir}/third_party/google-breakpad ) {
                 include($${top_srcdir}/google-breakpad.pri)
             } else {
@@ -62,14 +65,15 @@ CONFIG(release, debug|release) {
             }
         }
         #add debug info
-        QMAKE_CXXFLAGS_RELEASE += -pedantic -Wall -g  -Wextra -O3 -Wformat=2 -Wshadow
+        QMAKE_CXXFLAGS_RELEASE += -g
         QMAKE_CFLAGS_RELEASE += -g
         QMAKE_LFLAGS_RELEASE =
     }
 } else: {
     !build_pass:message("Building with full debug info")
-    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -O1 -Wformat=2 -Wshadow
+    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -O2 -Wformat=2 -Wshadow
     QMAKE_CXXFLAGS += -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC
+
     unix: {
         QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=2
 
