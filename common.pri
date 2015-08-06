@@ -72,6 +72,15 @@ CONFIG(release, debug|release) {
     QMAKE_CXXFLAGS += -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC
     unix: {
         QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=2
+
+        ## Clang & GCC 4.8+
+        QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
+        QMAKE_CFLAGS += -fsanitize=address -fno-omit-frame-pointer
+        QMAKE_LFLAGS += -fsanitize=address
+        # Clang & GCC 4.9+
+        QMAKE_CXXFLAGS += -fsanitize=undefined
+        QMAKE_CFLAGS += -fsanitize=undefined
+        QMAKE_LFLAGS += -fsanitize=undefined
     }
     contains(QMAKE_CC, gcc): {
         QMAKE_CXXFLAGS += -Wlogical-op
@@ -79,16 +88,7 @@ CONFIG(release, debug|release) {
         unix: {
             QMAKE_CXXFLAGS += -ldl -rdynamic -lmcheck
         }  
-    }
-
-    ## Clang & GCC 4.8+
-    QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
-    QMAKE_CFLAGS += -fsanitize=address -fno-omit-frame-pointer
-    QMAKE_LFLAGS += -fsanitize=address
-    # Clang & GCC 4.9+
-    QMAKE_CXXFLAGS += -fsanitize=undefined
-    QMAKE_CFLAGS += -fsanitize=undefined
-    QMAKE_LFLAGS += -fsanitize=undefined
+    } 
 }
 
 include(configure.pri)
