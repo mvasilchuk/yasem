@@ -27,9 +27,12 @@ You may also change output directory by passing variable YASEM_OUTPUT_DIR to qma
 * Patched version of [QtAV](https://github.com/wang-bin/QtAV) (included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
 
 ##### Optional
-* cifs-utils & smbtree - for SAMBA support;
-* sudo with no-password option for "mount" command - to mount network shares (SAMBA).
+
 * qca for qt5 - software remote controls support (compatible with MAG 250).
+
+Linux/*nix only:
+* cifs-utils & smbtree - for SAMBA support;
+* sudo with no-password option for "mount" command - to mount network shares (SAMBA);
 
 _WARNING_: Some functionality may not be available with Qt version less than 5.2
 
@@ -70,7 +73,7 @@ in sources root then run
     
 That should be enough. If video can't be played make sure you have all required codecs installed.
 
-By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option CONFIG+=NO_BUNDLE to qmake.
+By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option CONFIG-=app_bundle to qmake.
 
 #### Configuration
 
