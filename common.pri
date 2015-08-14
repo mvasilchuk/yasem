@@ -65,6 +65,7 @@ CONFIG(release, debug|release) {
                 !build_pass:message("Google Breakpad is missing. Skipping...")
             }
         }
+        QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=2
         #add debug info
         QMAKE_CXXFLAGS_RELEASE += -g
         QMAKE_CFLAGS_RELEASE += -g
@@ -72,11 +73,13 @@ CONFIG(release, debug|release) {
     }
 } else: {
     !build_pass:message("Building with full debug info")
-    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -O2 -Wformat=2 -Wshadow
+    QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -Wformat=2 -Wshadow
     QMAKE_CXXFLAGS += -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC
 
-    unix: {
-        QMAKE_CXXFLAGS += -D_FORTIFY_SOURCE=2
+    unix:greaterThan(QT_MAJOR_VERSION, 5):greaterThan(QT_MINOR_VERSION, 4) {
+        # If Qt version <= 5.4 sometimes it's not available to load resources
+        # from .qrc files if built with these flags.
+        # Need more checks.
 
         ## Clang & GCC 4.8+
         QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
