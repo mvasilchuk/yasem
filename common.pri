@@ -76,7 +76,7 @@ CONFIG(release, debug|release) {
     QMAKE_CXXFLAGS += -pedantic -Wall -Wextra  -g -Wformat=2 -Wshadow
     QMAKE_CXXFLAGS += -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC
 
-    unix:greaterThan(QT_MAJOR_VERSION, 5):greaterThan(QT_MINOR_VERSION, 4) {
+    unix:greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 4) {
         # If Qt version <= 5.4 sometimes it's not available to load resources
         # from .qrc files if built with these flags.
         # Need more checks.
