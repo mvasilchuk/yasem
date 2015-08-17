@@ -44,7 +44,7 @@ You may also change output directory by passing variable YASEM_OUTPUT_DIR to qma
     
 It may be difficult for some users to build yasem-qtav-mediaplayer plugin (especially on Windows), because it requires to get libav or ffmpeg sources, QtAV sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. Just create file *plugins-exclude.pri* in yasem's source root directory with content:
 
-    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
     
 and rebuild Yasem.
 
@@ -88,7 +88,7 @@ Install yasem from AUR:
 2. Download [yasem](https://github.com/mvasilchuk/yasem.git) from this repository and open it in QtCreator.
 3. Create file *plugins-exclude.pri* in yasem's source root directory with content:
 
-    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
 
 4. Build and run yasem.
 
@@ -105,7 +105,7 @@ If you want to build yasem with QtAV media player skip step 3 in previous list a
 4. 
 Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. Create a file plugins-exclude.pri with content:
 
-    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
     
 in sources root then run
 
