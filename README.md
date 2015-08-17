@@ -4,7 +4,29 @@ Yasem (Yet Another Stb EMulator) is an IPTV Set-Top-Box emulator for desktop pla
 
 **YASEM is free software licensed under the term of GPL v2. Some of its components may be licensed under different terms.**
 
-#### How to compile
+## Plugins
+
+Yasem distributed with a few plugins:
+
+### Main plugins
+
+* [yasem-core](https://github.com/mvasilchuk/yasem-core) - Core module (executable file).
+* [yasem-sdk](https://github.com/mvasilchuk/yasem-sdk) - SDK library. Both core and libraries are dynamically linked with SDK.
+* [yasem-desktop-gui](https://github.com/mvasilchuk/yasem-desktop-gui) - GUI for desktop OS.
+* [yasem-web-browser](https://github.com/mvasilchuk/yasem-web-browser) - Web browser component.
+* [yasem-ini-datasource](https://github.com/mvasilchuk/yasem-ini-datasource) - A simple datasource plugin that stores data in *ini* files (used only by some plugins).
+* [yasem-qt-mediaplayer](https://github.com/mvasilchuk/yasem-qt-mediaplayer) - A QMediaPlayer-based player for Yasem. Used by default.
+* [yasem-web-gui-plugin](https://github.com/mvasilchuk/yasem-web-gui-plugin) - A simple html/javascript based UI.
+* [yasem-mag-api](https://github.com/mvasilchuk/yasem-mag-api) - Implementation of JavaScript API of MAG-250/AuraHD STBs (and other MAG-XYZ STBs).
+* [yasem-dunehd-api](https://github.com/mvasilchuk/yasem-dunehd-api) - Implementation of JavaScript API of DuneHD STBs. Not very useful yet.
+
+### Optional plugins
+* [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) - QtAV-based player.
+* [yasem-web-server](https://github.com/mvasilchuk/yasem-web-server) - A simple web server that can be used to load local files via http://. 
+* [yasem-tray-icon](https://github.com/mvasilchuk/yasem-tray-icon) - A simple plugin that shows an icon in system tray.
+* [yasem-google-analytics](https://github.com/mvasilchuk/yasem-google-analytics) - Google Analytics plugin that reports some information of a system.
+
+## How to compile
     
     git clone --recursive https://github.com/mvasilchuk/yasem.git
     cd yasem
@@ -19,24 +41,34 @@ to run
 You may also change output directory by passing variable YASEM_OUTPUT_DIR to qmake
 
     qmake YASEM_OUTPUT_DIR=/destination/directory
+    
+It may be difficult for some users to build yasem-qtav-mediaplayer plugin (especially on Windows), because it requires to get libav or ffmpeg sources, QtAV sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. Just create file *plugins-exclude.pri* in yasem's source root directory with content:
 
-#### Requirements
+    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+    
+and rebuild Yasem.
 
-* Qt 5 (5.2.1+ is recommended) with Webkit support;
+## Requirements
+
+* Qt 5 (5.5 is recommended) with Webkit support;
 * C++11 compatible compiler (tested with GCC and Clang);
-* Patched version of [QtAV](https://github.com/wang-bin/QtAV) (included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
 
-##### Optional
+### Plugin requirements
 
-* qca for qt5 - software remote controls support (compatible with MAG 250).
+* [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer)
+  - [QtAV](https://github.com/wang-bin/QtAV) (patched version, included into [yasem-qtav-mediaplayer](https://github.com/mvasilchuk/yasem-qtav-mediaplayer) submodule). See [QtAV requirements](https://github.com/wang-bin/QtAV#requirements).
+* [yasem-mag-api](https://github.com/mvasilchuk/yasem-mag-api)
+  - [qca](http://delta.affinix.com/qca/) for qt5 (optional) - software remote controls support (compatible with MAG 250).
+
+### Optional requirements
 
 Linux/*nix only:
 * cifs-utils & smbtree - for SAMBA support;
 * sudo with no-password option for "mount" command - to mount network shares (SAMBA);
 
-_WARNING_: Some functionality may not be available with Qt version less than 5.2
+_WARNING_: Some functionality may not be available with Qt version less than 5.5
 
-### Installation on different OS
+## Installation on different OS
 
 ### Ubuntu
 
@@ -46,15 +78,24 @@ then follow "How to compile" block.
 
 ### Arch
 
+Install yasem from AUR:
+
     yaourt -S yasem-git
 
 ### Windows
 
 1. Download and install the latest version of [Qt](http://www.qt.io/download-open-source/) and QtCreator.
-2. Download yasem from this repository and open it in QtCreator.
-3. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
-4. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
-5. Build and run yasem.
+2. Download [yasem](https://github.com/mvasilchuk/yasem.git) from this repository and open it in QtCreator.
+3. Create file *plugins-exclude.pri* in yasem's source root directory with content:
+
+    PLUGINS\_EXCLUDE\_LIST += yasem-qtav-mediaplayer
+
+4. Build and run yasem.
+
+If you want to build yasem with QtAV media player skip step 3 in previous list and do the next:
+1. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
+2. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
+3. Rebuild yasem
  
 ### OS X
 
@@ -75,15 +116,15 @@ That should be enough. If video can't be played make sure you have all required 
 
 By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option CONFIG-=app_bundle to qmake.
 
-#### Configuration
+## Configuration
 
 There is a simple configuration dialog, but in most cases you'd better change configuration files in ~/.config/yasem (C:/Users/__User__/AppData/Roaming/yasem on Windows).
 
-#### Portable version
+## Portable version
 
 To make YASEM portable just create **config** directory next to yasem's binary. All settings and profiles will be stored there.
 
-#### Command line flags
+## Command line flags
 
 You can use some of command line options:
 
@@ -94,11 +135,9 @@ You can use some of command line options:
     
 You also may open developer tools anytime from a menu.
 
-#### Known issues
+## Known issues
 
-* Qt media player doesn't work if built with Qt 5.5.
-
-#### DONATE
+## DONATE
 
 **Bitcoin**: 1J1r4Ed5v76ym2o52bfY9MZ9XzTuDn4Yjo
 
