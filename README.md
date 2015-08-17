@@ -93,6 +93,7 @@ Install yasem from AUR:
 4. Build and run yasem.
 
 If you want to build yasem with QtAV media player skip step 3 in previous list and do the next:
+
 1. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
 2. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
 3. Rebuild yasem
