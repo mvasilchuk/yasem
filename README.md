@@ -50,7 +50,7 @@ and rebuild Yasem.
 
 ## Requirements
 
-* Qt 5 (5.5 is recommended) with Webkit support;
+* Qt 5.2+ (5.5 is recommended) with Webkit support;
 * C++11 compatible compiler (tested with GCC and Clang);
 
 ### Plugin requirements
