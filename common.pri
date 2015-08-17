@@ -82,13 +82,13 @@ CONFIG(release, debug|release) {
         # Need more checks.
 
         ## Clang & GCC 4.8+
-        QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
-        QMAKE_CFLAGS += -fsanitize=address -fno-omit-frame-pointer
-        QMAKE_LFLAGS += -fsanitize=address
+        #QMAKE_CXXFLAGS += -fsanitize=address -fno-omit-frame-pointer
+        #QMAKE_CFLAGS += -fsanitize=address -fno-omit-frame-pointer
+        #QMAKE_LFLAGS += -fsanitize=address
         # Clang & GCC 4.9+
-        QMAKE_CXXFLAGS += -fsanitize=undefined
-        QMAKE_CFLAGS += -fsanitize=undefined
-        QMAKE_LFLAGS += -fsanitize=undefined
+        #QMAKE_CXXFLAGS += -fsanitize=undefined
+        #QMAKE_CFLAGS += -fsanitize=undefined
+        #QMAKE_LFLAGS += -fsanitize=undefined
     }
     contains(QMAKE_CC, gcc): {
         QMAKE_CXXFLAGS += -Wlogical-op
