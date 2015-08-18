@@ -20,20 +20,19 @@ message("Project output directory: $${OUT_DIR}")
 message("Plugins subdirectory: $${PLUGINS_OUT_DIR}")
 message("Libs subdirectory: $${LIBS_OUT_DIR}")
 
-if(exists(plugins-exclude.pri)) {
-    include(plugins-exclude.pri)
-}
-else {
+#if(exists(plugins-exclude.pri)) {
+#    include(plugins-exclude.pri)
+#}
+#else {
+#}
 
-}
+#contains(DEFINES, USE_QML_WIDGETS): {
+#    PLUGINS_EXCLUDE_LIST += yasem-desktop-gui
+#} else: {
+#    PLUGINS_EXCLUDE_LIST += yasem-qml-gui
+#}
 
-contains(DEFINES, USE_QML_WIDGETS): {
-    PLUGINS_EXCLUDE_LIST += yasem-desktop-gui
-} else: {
-    PLUGINS_EXCLUDE_LIST += yasem-qml-gui
-}
-
-message("Plugins exclude list $${PLUGINS_EXCLUDE_LIST}")
+#message("Plugins exclude list $${PLUGINS_EXCLUDE_LIST}")
 
 if(contains(CONFIG, STATIC_BUILD))
 {
@@ -42,31 +41,52 @@ if(contains(CONFIG, STATIC_BUILD))
 }
 
 
-SUBDIRS = yasem-sdk \
-    yasem-core
+SUBDIRS = \
+    yasem-sdk \
+    yasem-core \
+    plugins/yasem-desktop-gui \
+    plugins/yasem-web-browser \
+    plugins/yasem-web-gui-plugin \
+    plugins/yasem-qt-mediaplayer \
+    plugins/yasem-ini-datasource \
+    plugins/yasem-mag-api \
+    plugins/yasem-dunehd-api \
+    plugins/yasem-qtav-mediaplayer \
+    plugins/yasem-tray-icon \
+    plugins/yasem-web-server \
+    plugins/yasem-google-analytics
 
-CLASSES =
-
-PLUGINS_EXCLUDE_LIST += \
-    yasem-samsung-smarttv-api
-
-entries = $$files(plugins/*)
-for(item, entries): {
-    data = $$split(item, "/")
-    name = $$member(data, 1)
-
-    if(!contains(PLUGINS_EXCLUDE_LIST, $$name)) {
-        exists(plugins/$${name}/$${name}.pro): {
-            message("Including $${name}")
-            SUBDIRS += plugins/$$name
-
-            if(contains(DEFINES, STATIC_BUILD))
-            {
-                LIBS += -lplugins/$$name
-            }
-        }
-    }
+win32: {
+    SUBDIRS += plugins/yasem-windows-integration
+} else:unix:!macx: {
+    SUBDIRS += plugins/yasem-kde-integration
+} macx: {
+    SUBDIRS += plugins/yasem-osx-integration
 }
+
+#PLUGINS_EXCLUDE_LIST += \
+#    yasem-samsung-smarttv-api \
+#    yasem-qtav-mediaplayer \
+#    # yasem-web-server # Not migrated yet
+#    #yasem-dunehd-api \
+
+#entries = $$files(plugins/*)
+#for(item, entries): {
+#    data = $$split(item, "/")
+#    name = $$member(data, 1)
+#
+#    if(!contains(PLUGINS_EXCLUDE_LIST, $$name)) {
+#        exists(plugins/$${name}/$${name}.pro): {
+#            message("Including $${name}")
+#            SUBDIRS += plugins/$$name
+
+#            if(contains(DEFINES, STATIC_BUILD))
+#            {
+#                LIBS += -lplugins/$$name
+#            }
+#        }
+#    }
+#}
 
 message('Subdirs:'  $$SUBDIRS)
 

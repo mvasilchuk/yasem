@@ -42,11 +42,7 @@ You may also change output directory by passing variable YASEM_OUTPUT_DIR to qma
 
     qmake YASEM_OUTPUT_DIR=/destination/directory
     
-It may be difficult for some users to build yasem-qtav-mediaplayer plugin (especially on Windows), because it requires to get libav or ffmpeg sources, QtAV sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. Just create file *plugins-exclude.pri* in yasem's source root directory with content:
-
-    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
-    
-and rebuild Yasem.
+It may be difficult for some users to build yasem-qtav-mediaplayer plugin (especially on Windows), because it requires to get libav or ffmpeg sources, QtAV sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
 
 ## Requirements
 
@@ -86,29 +82,20 @@ Install yasem from AUR:
 
 1. Download and install the latest version of [Qt](http://www.qt.io/download-open-source/) and QtCreator.
 2. Download [yasem](https://github.com/mvasilchuk/yasem.git) from this repository and open it in QtCreator.
-3. Create file *plugins-exclude.pri* in yasem's source root directory with content:
-
-    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
-
+3. If you want to build Yasem with QtAV:
+  - Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
+  - Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
+  If not, open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
 4. Build and run yasem.
-
-If you want to build yasem with QtAV media player skip step 3 in previous list and do the next:
-
-1. Download [libav](https://libav.org/download.html) or [ffmpeg](https://www.ffmpeg.org/download.html).
-2. Read QtAV's [How to build/Setup The Environment](https://github.com/wang-bin/QtAV/wiki/Build-QtAV#1-setup-the-environment) manual and configure build environment in QtCreator.
-3. Rebuild yasem
  
 ### OS X
 
 1. Make sure you have clang installed.
 2. Get and install [Qt 5](https://www.qt.io/download-open-source/).
 3. Get yasem sources.
-4. 
-Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. Create a file plugins-exclude.pri with content:
-
-    PLUGINS_EXCLUDE_LIST += yasem-qtav-mediaplayer
+4. Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
     
-in sources root then run
+5. Run:
 
     qmake
     make
