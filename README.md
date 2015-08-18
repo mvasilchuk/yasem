@@ -11,7 +11,7 @@ Yasem distributed with plugins (by default they all will be downloaded and built
 ### Main plugins
 
 * [yasem-core](https://github.com/mvasilchuk/yasem-core) - Core module (executable file).
-* [yasem-sdk](https://github.com/mvasilchuk/yasem-sdk) - SDK library. Both core and libraries are dynamically linked with SDK.
+* [yasem-sdk](https://github.com/mvasilchuk/yasem-sdk) - SDK library. Both core and libraries are statically linked with SDK.
 * [yasem-desktop-gui](https://github.com/mvasilchuk/yasem-desktop-gui) - GUI for desktop OS.
 * [yasem-web-browser](https://github.com/mvasilchuk/yasem-web-browser) - Web browser component.
 * [yasem-ini-datasource](https://github.com/mvasilchuk/yasem-ini-datasource) - A simple datasource plugin that stores data in *ini* files (used only by some plugins).
