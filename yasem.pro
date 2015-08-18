@@ -48,10 +48,7 @@ SUBDIRS = yasem-sdk \
 CLASSES =
 
 PLUGINS_EXCLUDE_LIST += \
-    yasem-samsung-smarttv-api \
-    yasem-qtav-mediaplayer \
-    # yasem-web-server # Not migrated yet
-    #yasem-dunehd-api \
+    yasem-samsung-smarttv-api
 
 entries = $$files(plugins/*)
 for(item, entries): {
