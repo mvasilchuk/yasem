@@ -6,7 +6,7 @@ Yasem (Yet Another Stb EMulator) is an IPTV Set-Top-Box emulator for desktop pla
 
 ## Plugins
 
-Yasem distributed with a few plugins:
+Yasem distributed with plugins (by default they all will be downloaded and built):
 
 ### Main plugins
 
