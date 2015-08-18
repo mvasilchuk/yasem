@@ -56,3 +56,12 @@
 [submodule "plugins/yasem-google-analytics"]
 	path = plugins/yasem-google-analytics
 	url = https://github.com/mvasilchuk/yasem-google-analytics.git
+[submodule "plugins/yasem-osx-integration"]
+	path = plugins/yasem-osx-integration
+	url = https://github.com/mvasilchuk/yasem-osx-integration.git
+[submodule "plugins/yasem-windows-integration"]
+	path = plugins/yasem-windows-integration
+	url = https://github.com/mvasilchuk/yasem-windows-integration.git
+[submodule "plugins/yasem-kde-integration"]
+	path = plugins/yasem-kde-integration
+	url = https://github.com/mvasilchuk/yasem-kde-integration.git
