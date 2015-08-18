@@ -95,14 +95,14 @@ Install yasem from [AUR](https://aur4.archlinux.org/packages/yasem-git):
 2. Get and install [Qt 5](https://www.qt.io/download-open-source/).
 3. Get yasem sources.
 4. Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
-5. Run:
+5. 5. Run:
 
     qmake
     make
     
 That should be enough. If video can't be played make sure you have all required codecs installed.
 
-By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option CONFIG-=app_bundle to qmake.
+By default all app files are packed into a bundle. If you want to get all files separately (like in other OS) add option *CONFIG-=app_bundle* to qmake.
 
 ## Configuration
 
@@ -121,7 +121,7 @@ You can use some of command line options:
     --verbose - Print extra log information in Release mode (only Linux and OS X).
     --log=<file name> - Write log in a file. If you don't see a log file, make sure you have write access to a file and/or directory.
     
-You also may open developer tools anytime from a menu.
+You also may open developer tools anytime from yasem's main menu.
 
 ## Known issues
 
