@@ -42,7 +42,7 @@ You may also change output directory by passing variable YASEM_OUTPUT_DIR to qma
 
     qmake YASEM_OUTPUT_DIR=/destination/directory
     
-It may be difficult for some users to build *yasem-qtav-mediaplayer* plugin (especially on Windows), because it requires to get libav or ffmpeg sources, QtAV sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
+It may be difficult for some users to build *yasem-qtav-mediaplayer* plugin (especially on Windows), because it requires to get *libav* or *ffmpeg* sources, *QtAV* sources and some work to copy all required libaries into Yasem output folder. In this case you can make yasem without QtAV media player plugin. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
 
 ## Requirements
 
@@ -74,7 +74,7 @@ then follow "How to compile" block.
 
 ### Arch
 
-Install yasem from AUR:
+Install yasem from [AUR](https://aur4.archlinux.org/packages/yasem-git):
 
     yaourt -S yasem-git
 
