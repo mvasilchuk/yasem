@@ -97,6 +97,7 @@ Install yasem from [AUR](https://aur4.archlinux.org/packages/yasem-git):
 4. Since QtAV in OS X is not supported by YASEM yet, you can build YASEM with Qt player only. To do that open yasem.pro, find variable *SUBDIRS* and remove line *plugins/yasem-qtav-mediaplayer* from the list of subprojects.
 5. Run:
 
+
     qmake
     make
     
